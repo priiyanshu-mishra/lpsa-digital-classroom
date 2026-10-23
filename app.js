@@ -1,82 +1,75 @@
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
-import { firebaseConfig } from "./firebase-config.js";
+const classGrid = document.getElementById("class-grid");
+const pdfList = document.getElementById("pdf-list");
+const materialsTitle = document.getElementById("materials-title");
+const materialsHelp = document.getElementById("materials-help");
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-const classList = document.getElementById("class-list");
-const materialsList = document.getElementById("materials-list");
-const heading = document.getElementById("class-heading");
+const materials = [
+  {
+    classNo: 1,
+    subject: "Computer",
+    title: "Chapter 01 - Computer Fundamental",
+    file: "CHAPTER%2001%20COMPUTER%20FUNDAMENTAL.pdf"
+  }
+];
 
 let selectedClass = 1;
-let materials = {};
 
 for (let i = 1; i <= 8; i++) {
-  const card = document.createElement("button");
-  card.className = "class-card";
-  card.type = "button";
-  card.innerHTML = `<span class="class-book">📘</span>
-    <strong>Class ${i}</strong><span>View PDFs →</span>`;
+  const button = document.createElement("button");
+  button.className = "class-card";
+  button.type = "button";
+  button.innerHTML = `
+    <span class="class-book">📘</span>
+    <strong>Class ${i}</strong>
+    <span>View PDFs →</span>
+  `;
 
-  card.addEventListener("click", () => {
+  button.addEventListener("click", () => {
     selectedClass = i;
     renderMaterials();
-    document.getElementById("materials-section")
-      .scrollIntoView({ behavior: "smooth" });
+    document.getElementById("materials")
+      ?.scrollIntoView({ behavior: "smooth" });
   });
 
-  classList.appendChild(card);
+  classGrid.appendChild(button);
 }
 
 function renderMaterials() {
-  heading.textContent = `Class ${selectedClass} — Study Materials`;
-  materialsList.replaceChildren();
+  materialsTitle.textContent =
+    `Class ${selectedClass} — Study Materials`;
 
-  const list = Object.entries(materials)
-    .filter(([, item]) =>
-      item &&
-      item.published === true &&
-      Number(item.classNo) === selectedClass &&
-      typeof item.downloadURL === "string" &&
-      item.downloadURL.startsWith("https://")
-    )
-    .sort((a, b) => Number(b[1].createdAt || 0) -
-                     Number(a[1].createdAt || 0));
+  materialsHelp.textContent = "Open or download your study material.";
+  pdfList.replaceChildren();
 
-  if (!list.length) {
-    materialsList.textContent = "Study materials coming soon!";
+  const list = materials.filter(
+    item => item.classNo === selectedClass
+  );
+
+  if (list.length === 0) {
+    pdfList.textContent = "📚 No PDFs uploaded for this class yet.";
     return;
   }
 
-  for (const [, item] of list) {
+  list.forEach(item => {
     const card = document.createElement("article");
     card.className = "pdf-card";
 
     const title = document.createElement("h3");
-    title.textContent = item.title || "Study Material";
+    title.textContent = item.title;
 
     const subject = document.createElement("p");
-    subject.textContent = item.subject || "General";
+    subject.textContent = item.subject;
 
     const link = document.createElement("a");
-    link.className = "button";
-    link.href = item.downloadURL;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+    link.className = "button button-primary";
+    link.href = item.file;
     link.textContent = "Download PDF";
+    link.setAttribute("download", "");
 
     card.append(title, subject, link);
-    materialsList.appendChild(card);
-  }
+    pdfList.appendChild(card);
+  });
 }
 
-onValue(ref(db, "materials"), snapshot => {
-  materials = snapshot.val() || {};
-  renderMaterials();
-}, error => {
-  console.error(error);
-  materialsList.textContent =
-    "Materials could not load. Please try again later.";
-});
+renderMaterials();
