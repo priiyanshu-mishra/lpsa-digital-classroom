@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download class-wise study materials from L.P. Savani Academy Digital Classroom.">
+  <title>L.P. Savani Academy | Digital Classroom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="L.P. Savani Academy home">
+      <span class="brand-mark">✦</span><span><strong>L.P. Savani Academy</strong><small>Digital Classroom</small></span>
+    </a>
+    <nav class="class-nav" aria-label="Class navigation">
+      <a href="#home">Home</a>
+      <a href="#class-1">Class 1</a><a href="#class-2">Class 2</a><a href="#class-3">Class 3</a><a href="#class-4">Class 4</a>
+      <a href="#class-5">Class 5</a><a href="#class-6">Class 6</a><a href="#class-7">Class 7</a><a href="#class-8">Class 8</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">LEARN • PRACTISE • GROW</span>
+        <h1>Your classroom,<br><span>one click away.</span></h1>
+        <p>Download your class study materials easily. Choose your class and find the PDFs shared by your teacher.</p>
+        <a class="button button-primary" href="#classes">Explore classes <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="float-icon float-one">✎</div><div class="float-icon float-two">✦</div><div class="float-icon float-three">★</div>
+        <div class="book book-back"></div><div class="book book-middle"></div>
+        <div class="book book-front"><span>LEARN</span><b>ABC</b></div>
+        <div class="hero-orbit"></div>
+      </div>
+    </section>
+
+    <section class="section" id="classes">
+      <div class="section-heading"><span class="eyebrow">PICK YOUR CLASS</span><h2>What are we learning today?</h2><p>Tap your class to open its study materials.</p></div>
+      <div class="class-grid" id="class-grid"></div>
+    </section>
+    <section class="section materials-section" id="materials" aria-live="polite">
+      <div class="section-heading"><span class="eyebrow">STUDY MATERIALS</span><h2 id="materials-title">Choose a class</h2><p id="materials-help">Your teacher's published PDFs will appear here.</p></div>
+      <div class="pdf-list" id="pdf-list"><div class="empty-state">📚 Choose a class above to see its PDFs.</div></div>
+    </section>
+  </main>
+  <footer><strong>L.P. Savani Academy</strong><span>Keep learning, keep growing ✦</span><a href="admin.html">Teacher login</a></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

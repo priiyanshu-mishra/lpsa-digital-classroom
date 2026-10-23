@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{--blue:#1768c4;--deep:#123d70;--sky:#eaf5ff;--gold:#f3c969;--ink:#17314e;--muted:#60758c;--white:#fff;--line:#dce9f5;--shadow:0 18px 45px #164a7b14}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:#f8fbff;color:var(--ink);font-family:Nunito,system-ui,sans-serif}a{color:inherit;text-decoration:none}.site-header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:13px clamp(16px,4vw,60px);display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#277fe0,#1254a0);color:#fff;font-size:25px;box-shadow:0 7px 0 #0e4788;transform:rotate(-4deg)}.brand strong,.brand small{display:block}.brand strong{font-size:14px}.brand small{font-size:12px;color:var(--muted)}.class-nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.class-nav a{font-size:12px;font-weight:800;padding:8px 10px;border-radius:10px;color:#34516f}.class-nav a:hover{background:var(--sky);color:var(--blue)}.hero{margin:26px auto 0;max-width:1320px;width:calc(100% - 40px);min-height:360px;border-radius:30px;padding:clamp(28px,6vw,76px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;overflow:hidden;position:relative;background:radial-gradient(circle at 80% 20%,#d9edff 0 14%,transparent 40%),linear-gradient(125deg,#eaf5ff,#fff 65%,#fff7df);border:1px solid #dcebf9}.hero-copy{position:relative;z-index:2;max-width:560px}.eyebrow{display:inline-block;color:var(--blue);font-size:11px;font-weight:900;letter-spacing:2px}.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-2px;margin:15px 0;color:#153a65}.hero h1 span{color:var(--blue)}.hero p{max-width:470px;color:var(--muted);line-height:1.8;font-size:16px}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 20px;border:0;border-radius:14px;font:800 14px Nunito;cursor:pointer;transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-3px)}.button-primary{background:linear-gradient(135deg,#287ee0,#1259b2);color:#fff;box-shadow:0 6px 0 #10478c,0 12px 25px #1b69bf2b}.button-light{background:#eef6ff;color:#1758a0}.hero-art{height:270px;position:relative;display:grid;place-items:center;perspective:800px}.hero-orbit{position:absolute;width:250px;height:250px;border:1px dashed #8bb9e4;border-radius:50%;transform:rotateX(65deg)}.book{position:absolute;width:165px;height:205px;border-radius:12px 18px 18px 12px;box-shadow:10px 15px 0 #0d3d6a24,0 25px 35px #174b7b25;transform-style:preserve-3d;animation:float 4s ease-in-out infinite}.book-back{background:#f3c969;transform:translate(30px,-3px) rotate(13deg)}.book-middle{background:#54a5e9;transform:translate(-18px,0) rotate(-10deg);animation-delay:-1s}.book-front{background:linear-gradient(145deg,#1f77d0,#124a91);transform:translate(0,12px) rotateY(-10deg) rotateZ(-2deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;border:5px solid #ffffff45}.book-front span{font-size:14px;letter-spacing:4px;font-weight:900}.book-front b{font-size:52px;color:#ffe39b}.float-icon{position:absolute;z-index:2;display:grid;place-items:center;width:48px;height:48px;background:#fff;border-radius:16px;box-shadow:var(--shadow);font-size:25px;color:var(--blue);animation:float 3.5s ease-in-out infinite}.float-one{left:8%;top:18%;transform:rotate(-12deg)}.float-two{right:12%;top:12%;color:#d39c24;animation-delay:-.8s}.float-three{right:9%;bottom:12%;color:#ed9e36;animation-delay:-1.5s}.section{max-width:1320px;width:calc(100% - 40px);margin:66px auto}.section-heading{text-align:center;margin-bottom:27px}.section-heading h2{font-size:clamp(25px,3vw,36px);margin:8px 0;color:#163d68;letter-spacing:-.7px}.section-heading p{margin:0;color:var(--muted)}.class-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.class-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 18px;text-align:center;box-shadow:0 7px 20px #164a7b08;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}.class-card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--card-color,#287ee0)}.class-card:hover{transform:translateY(-7px) rotateX(2deg);box-shadow:0 18px 32px #164a7b17}.class-illustration{height:88px;display:grid;place-items:center;font-size:54px;filter:drop-shadow(0 8px 4px #214a7419);transform:rotate(-5deg)}.class-card h3{margin:8px 0 3px;font-size:20px}.class-card p{margin:0 0 17px;font-size:13px;color:var(--muted)}.class-card .button{width:100%;padding:11px}.materials-section{background:#eef6ff;border:1px solid #dbeaf8;border-radius:28px;padding:36px 28px;min-height:250px}.pdf-list{max-width:850px;margin:auto;display:grid;gap:12px}.pdf-item{display:flex;align-items:center;gap:15px;background:#fff;padding:16px;border:1px solid var(--line);border-radius:16px}.pdf-icon{width:46px;height:50px;flex:0 0 46px;border-radius:11px;background:#fff0ed;color:#d34c40;display:grid;place-items:center;font-weight:900;font-size:13px}.pdf-info{min-width:0;flex:1}.pdf-info h3{font-size:15px;margin:0 0 3px;overflow-wrap:anywhere}.pdf-info p{font-size:12px;color:var(--muted);margin:0}.download-button{background:#e8f5ec;color:#16703c;padding:10px 14px;white-space:nowrap}.empty-state,.status-message{background:#fff;border:1px dashed #c7dced;border-radius:16px;padding:25px;text-align:center;color:var(--muted)}footer{border-top:1px solid var(--line);padding:24px clamp(20px,4vw,60px);display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--muted);font-size:13px}footer strong{color:var(--deep)}footer a{font-weight:800;color:var(--blue)}.admin-wrap{max-width:900px;width:calc(100% - 32px);margin:42px auto}.admin-panel{background:white;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:24px;padding:clamp(20px,4vw,36px);margin-bottom:20px}.admin-panel h1,.admin-panel h2{margin-top:0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-weight:800;font-size:13px}.field input,.field select{width:100%;padding:13px;border:1px solid #cdddeb;border-radius:12px;font:inherit;background:#fff;color:var(--ink)}.field input:focus,.field select:focus{outline:3px solid #d6eaff;border-color:#5b9de0}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.notice{font-size:13px;color:var(--muted);line-height:1.6}.danger-button{background:#fff0ef;color:#b3261e;padding:9px 12px}.admin-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.admin-row:last-child{border-bottom:0}.admin-row .pdf-info{flex:1}.hidden{display:none!important}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@media(max-width:950px){.site-header{align-items:flex-start;flex-direction:column}.class-nav{justify-content:flex-start}.hero{grid-template-columns:1fr .7fr}.class-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.hero{grid-template-columns:1fr;padding:30px 24px}.hero-art{height:230px;grid-row:1}.hero h1{font-size:43px}.hero-copy{text-align:center}.hero p{font-size:14px}.class-grid{gap:12px}.class-card{padding:17px 12px}.class-illustration{height:65px;font-size:43px}.section{margin:44px auto}.materials-section{padding:28px 14px}.pdf-item{align-items:flex-start;flex-wrap:wrap}.pdf-info{min-width:calc(100% - 65px)}.download-button{margin-left:60px}footer{flex-wrap:wrap}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.class-nav{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:4px}.class-nav a{flex:0 0 auto}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* ==========================================
+   LPSA DIGITAL CLASSROOM
+   ADDITIONAL CSS — KEEP EXISTING CSS
+   Paste at the END of style.css
+========================================== */
+
+/* Smooth 3D depth for existing cards */
+.class-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.class-card:hover .class-illustration {
+  transform: translateY(-4px) rotate(3deg) scale(1.06);
+  transition: transform 0.3s ease;
+}
+
+/* Class card keyboard accessibility */
+.class-card:focus-visible,
+.button:focus-visible,
+.class-nav a:focus-visible,
+.download-button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* Enhanced PDF card hover */
+.pdf-item {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.pdf-item:hover {
+  transform: translateY(-3px);
+  border-color: #a9cfee;
+  box-shadow: 0 12px 24px #164a7b12;
+}
+
+.pdf-icon {
+  box-shadow: inset 0 -3px 0 #d34c4010;
+}
+
+/* Download button interaction */
+.download-button {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  background: #d8f0e0;
+}
+
+/* Better admin dashboard layout */
+.admin-panel {
+  overflow: hidden;
+}
+
+.admin-row {
+  flex-wrap: wrap;
+}
+
+.admin-row .pdf-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.admin-row button {
+  flex-shrink: 0;
+}
+
+/* Better form interaction */
+.field input:hover,
+.field select:hover {
+  border-color: #9bbfe3;
+}
+
+.field input[type="file"] {
+  max-width: 100%;
+  font-size: 13px;
+}
+
+.form-actions .button {
+  min-height: 44px;
+}
+
+/* Clear feedback and empty states */
+.status-message,
+.empty-state {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.status-message:empty {
+  display: none;
+}
+
+/* Sticky navigation spacing */
+#materials-section,
+.materials-section {
+  scroll-margin-top: 100px;
+}
+
+/* Responsive PDF rows */
+@media (max-width: 620px) {
+  .admin-row {
+    align-items: flex-start;
+  }
+
+  .admin-row .pdf-info {
+    flex: 1 1 150px;
+  }
+
+  .admin-row .danger-button {
+    margin-left: auto;
+  }
+
+  .form-actions .button {
+    width: 100%;
+  }
+
+  .pdf-item {
+    gap: 12px;
+  }
+
+  .download-button {
+    margin-left: 58px;
+    max-width: calc(100% - 58px);
+    white-space: normal;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .class-card,
+  .class-illustration,
+  .pdf-item,
+  .download-button {
+    transition: none !important;
+    transform: none !important;
+  }
+}

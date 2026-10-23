@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Admin | L.P. Savani Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">📚</span>
+      <span>L.P. Savani Academy<small>Digital Classroom</small></span>
+    </a>
+    <a class="download-button" href="index.html">Student Website</a>
+  </header>
+
+  <main class="admin-wrap">
+    <section class="admin-panel">
+      <p class="eyebrow">TEACHER ACCESS</p>
+      <h1>Admin Login</h1>
+      <p>Login to manage class notes and PDF files.</p>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="email">Teacher Email</label>
+          <input id="email" type="email" autocomplete="username"
+                 placeholder="Enter teacher email" required>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" type="password"
+                 autocomplete="current-password"
+                 placeholder="Enter password" required>
+        </div>
+
+        <div class="form-actions">
+          <button class="download-button" id="login-button" type="submit">
+            Login
+          </button>
+        </div>
+        <p id="login-message" class="status-message" role="status"></p>
+      </form>
+
+      <div id="dashboard-panel" class="hidden">
+        <hr>
+        <h2>Upload Study Material</h2>
+        <p>Signed in as: <strong id="signed-in-as"></strong></p>
+
+        <form id="upload-form">
+          <div class="field">
+            <label for="classNo">Select Class</label>
+            <select id="classNo" required>
+              <option value="">Choose class</option>
+              <option value="1">Class 1</option>
+              <option value="2">Class 2</option>
+              <option value="3">Class 3</option>
+              <option value="4">Class 4</option>
+              <option value="5">Class 5</option>
+              <option value="6">Class 6</option>
+              <option value="7">Class 7</option>
+              <option value="8">Class 8</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" placeholder="e.g. Computer"
+                   maxlength="60" required>
+          </div>
+
+          <div class="field">
+            <label for="pdfTitle">PDF Title</label>
+            <input id="pdfTitle" type="text"
+                   placeholder="e.g. Chapter 1 Notes"
+                   maxlength="100" required>
+          </div>
+
+          <div class="field">
+            <label for="pdfFile">Choose PDF (maximum 10 MB)</label>
+            <input id="pdfFile" type="file"
+                   accept=".pdf,application/pdf" required>
+          </div>
+
+          <div class="form-actions">
+            <button class="download-button" id="upload-button" type="submit">
+              Upload PDF
+            </button>
+          </div>
+          <p id="upload-message" class="status-message" role="status"></p>
+        </form>
+
+        <hr>
+        <h2>Uploaded PDFs</h2>
+        <div id="admin-file-list">
+          <p class="empty-state">Loading files...</p>
+        </div>
+
+        <div class="form-actions">
+          <button class="danger-button" id="logout-button" type="button">
+            Logout
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>L.P. Savani Academy | Digital Classroom</p>
+  </footer>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

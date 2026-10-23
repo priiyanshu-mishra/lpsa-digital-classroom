@@ -1,0 +1,9 @@
+
+{
+  "rules": {
+    "materials": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'nfWTVw7lcpgPHQkVJFYYO5ezlZd2'"
+    }
+  }
+}
