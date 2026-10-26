@@ -4,21 +4,17 @@ const pdfList = document.getElementById("pdf-list");
 const materialsTitle = document.getElementById("materials-title");
 const materialsHelp = document.getElementById("materials-help");
 
-const materials = [
-  {
-    classNo: 1,
-    subject: "Computer",
-    title: "Chapter 01 - Computer Fundamental",
-    file: "CHAPTER%2001%20COMPUTER%20FUNDAMENTAL.pdf"
-  }
-];
+// Study materials will be loaded here.
+const materials = [];
 
-let selectedClass = 1;
+let selectedClass = null;
 
+// Create Class 1 to Class 8 buttons.
 for (let i = 1; i <= 8; i++) {
   const button = document.createElement("button");
   button.className = "class-card";
   button.type = "button";
+
   button.innerHTML = `
     <span class="class-book">📘</span>
     <strong>Class ${i}</strong>
@@ -28,6 +24,7 @@ for (let i = 1; i <= 8; i++) {
   button.addEventListener("click", () => {
     selectedClass = i;
     renderMaterials();
+
     document.getElementById("materials")
       ?.scrollIntoView({ behavior: "smooth" });
   });
@@ -36,40 +33,50 @@ for (let i = 1; i <= 8; i++) {
 }
 
 function renderMaterials() {
+  if (!selectedClass) return;
+
   materialsTitle.textContent =
     `Class ${selectedClass} — Study Materials`;
 
-  materialsHelp.textContent = "Open or download your study material.";
+  materialsHelp.textContent =
+    "Open or download your study material.";
+
   pdfList.replaceChildren();
 
-  const list = materials.filter(
-    item => item.classNo === selectedClass
+  const classMaterials = materials.filter(
+    item => Number(item.classNo) === selectedClass
   );
 
-  if (list.length === 0) {
-    pdfList.textContent = "📚 No PDFs uploaded for this class yet.";
+  if (classMaterials.length === 0) {
+    pdfList.textContent =
+      "📚 No PDFs uploaded for this class yet.";
     return;
   }
 
-  list.forEach(item => {
+  classMaterials.forEach(item => {
     const card = document.createElement("article");
     card.className = "pdf-card";
 
     const title = document.createElement("h3");
-    title.textContent = item.title;
+    title.textContent = item.title || item.fileName || "Study Material";
 
     const subject = document.createElement("p");
-    subject.textContent = item.subject;
+    subject.textContent = item.subject || "Computer";
 
     const link = document.createElement("a");
     link.className = "button button-primary";
-    link.href = item.file;
-    link.textContent = "Download PDF";
-    link.setAttribute("download", "");
+    link.href = item.url || item.file || "#";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open PDF";
 
     card.append(title, subject, link);
     pdfList.appendChild(card);
   });
 }
 
-renderMaterials();
+// Show an initial message until a class is selected.
+materialsTitle.textContent = "Select Your Class";
+materialsHelp.textContent =
+  "Choose a class above to view study materials.";
+pdfList.textContent = "📚 Select Class 1 to 8 to get started.";
